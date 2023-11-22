@@ -51,9 +51,7 @@
 
 ## スクリーンショット
 
-![微信图片_20231123023150](https://github.com/cyyier/clockin/assets/52512369/6328d326-40c1-4aaf-a125-97c0117f2a8d)
-![微信图片_20231123023155](https://github.com/cyyier/clockin/assets/52512369/a02aae22-472f-4601-8304-b4d4a385df1d)
-![微信图片_20231123023158](https://github.com/cyyier/clockin/assets/52512369/942b7bfa-3121-44d7-b324-eff0f658365e)
-
-
+![微信图片_20231123023158](https://github.com/cyyier/clockin/assets/52512369/1537b15b-2b74-4021-8497-094e872d808a)
+![微信图片_20231123023155](https://github.com/cyyier/clockin/assets/52512369/e381dbb3-70c9-4052-a97e-ea4e08ab12a3)
+![微信图片_20231123023150](https://github.com/cyyier/clockin/assets/52512369/7584379c-9f08-4a5a-b026-8902eded7814)
 
