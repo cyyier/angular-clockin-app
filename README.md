@@ -50,10 +50,10 @@
 ```
 
 ## スクリーンショット
-![08534e97a2cde6f8bb533a0aa386886](https://github.com/cyyier/clockin/assets/52512369/cd8b2318-27f4-444d-ab17-0bd1f15bb7ee)
-![2970f5cae20f6fed4cdbfcd31b612de](https://github.com/cyyier/clockin/assets/52512369/b4e39155-8605-4297-aeff-11a0d7db9cad)
-![c6eaaa872dec7b4467f047ace90d8c7](https://github.com/cyyier/clockin/assets/52512369/3cf98845-b3bf-431b-a6a5-0223b5cb00e6)
 
+![微信图片_20231123023150](https://github.com/cyyier/clockin/assets/52512369/6328d326-40c1-4aaf-a125-97c0117f2a8d)
+![微信图片_20231123023155](https://github.com/cyyier/clockin/assets/52512369/a02aae22-472f-4601-8304-b4d4a385df1d)
+![微信图片_20231123023158](https://github.com/cyyier/clockin/assets/52512369/942b7bfa-3121-44d7-b324-eff0f658365e)
 
 
 
