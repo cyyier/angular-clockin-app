@@ -1,27 +1,52 @@
-# ClockIn
+# 勤務時間管理アプリ
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.2.7.
+## 機能
 
-## Development server
+- 毎日の出勤時間と退勤時間の記録
+- 当月の出勤日数と勤務時間の集計
+- (計画中) Excelにデータをエクスポートする機能
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## 使用技術
 
-## Code scaffolding
+- Angular CLI 15.2.7.
+- TypeScript
+- Cordova（Androidアプリのビルド用）
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## コードサンプル
 
-## Build
+### **データのローカルストレージへの保存**
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+```typescript
+ // localStorageデータを設定する
+  set(key: string, value: any): boolean {
+    localStorage.setItem(`${STORAGE_KEY}-${key}`, JSON.stringify(value));
+    return JSON.stringify(this.get(key)) == JSON.stringify(value);
+  }
 
-## Running unit tests
+  // localStorageデータを取得する
+  get(key: string, defaultValue: any = null) {
+    const value = localStorage.getItem(`${STORAGE_KEY}-${key}`);
+    return value ? JSON.parse(value) : defaultValue;
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+  }
+```
 
-## Running end-to-end tests
+### SQLiteを使用したデータベーステーブルの作成
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+```typescript
+ //SQLiteデータベーステーブルを作成する
+ createTable() {
+    this.sqlite.create({
+      name: 'data.db',
+      location: 'default'
+    })
+    .then((db: SQLiteObject) => {
+      db.executeSql('CREATE TABLE IF NOT EXISTS time_sheet(id INTEGER PRIMARY KEY AUTOINCREMENT, firstname TEXT, lastname TEXT)', [])
+        .then(() => console.log('Executed SQL'))
+        .catch(e => console.log(e));
+    })
+    .catch(e => console.log(e));
+  }
+```
 
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+### 
