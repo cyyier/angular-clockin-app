@@ -1,0 +1,12 @@
+
+<router-outlet></router-outlet>
+<nav class="navbar">
+  <a class="navbar-item" routerLink="/home" routerLinkActive="active" ariaCurrentWhenActive="page" *ngIf="showHomeLink">ホーム</a>
+  <a class="navbar-item" routerLink="/outline" routerLinkActive="active" ariaCurrentWhenActive="page" *ngIf="showOutlineLink">今月概要</a>
+  <a class="navbar-item" routerLink="/list" routerLinkActive="active" ariaCurrentWhenActive="page" *ngIf="showListLink">履歴一覧</a>
+  <a class="navbar-item" routerLink="/list" routerLinkActive="active" ariaCurrentWhenActive="page">エクセル出力</a>
+</nav>
+
+
+
+

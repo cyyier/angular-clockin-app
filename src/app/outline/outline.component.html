@@ -1,0 +1,13 @@
+<div class="column">
+  <div class="box">
+    <div class="field">
+      <h2 class="title is-4">{{month}}月出勤概要</h2>
+      <p>出勤時間　<strong>{{workTime}}</strong>時間/150時間</p>
+      <progress class="progress is-link" [value]="workTime" max="150"></progress>
+      <p>出勤日数　<strong>{{workedDays}}</strong>日/{{workingDays}}日</p>
+      <progress class="progress is-link" [value]="workedDays" [max]="workingDays"></progress>
+      <p>必要出勤時間／日　<strong>{{needWorkTimeByDay}}</strong>時間</p>
+
+    </div>
+
+  </div>

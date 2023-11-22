@@ -1,0 +1,34 @@
+<table class="table is-fullwidth is-narrow is-striped">
+  <thead>
+  <tr>
+    <th>日</th>
+    <th>出社</th>
+    <th>退社</th>
+    <th>休憩</th>
+    <th>出勤</th>
+    <th></th>
+  </tr>
+  </thead>
+  <tfoot>
+  <th></th>
+  <th></th>
+  <th></th>
+  <th></th>
+  <th>{{workTime}}</th>
+  <th></th>
+
+  </tfoot>
+  <tbody *ngFor="let item of localStorageData">
+  <tr>
+    <th>{{item.key.substring(14)}}</th>
+    <td> {{item.value._startTime}}</td>
+    <td> {{item.value._endTime}}</td>
+    <td> {{item.value._lunchTime}}</td>
+    <td> {{item.value._duration.toFixed(1)}}</td>
+    <td><a>変更</a>&ensp;|&ensp;<a (click)="storageService.remove(item.key)">削除</a></td>
+
+  </tr>
+  </tbody>
+
+
+</table>
