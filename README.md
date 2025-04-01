@@ -1,57 +1,43 @@
-# 勤務時間管理アプリ
+# Clockin（勤務時間記録アプリ）
 
-## 機能
+Angular + Cordova を用いた、出退勤時間をローカルに記録・集計できる勤怠管理Androidアプリです。
 
-- 毎日の出勤時間と退勤時間の記録
-- 当月の出勤日数と勤務時間の集計
-- (計画中) Excelにデータをエクスポートする機能
+## 使用技術
+- Angular（v15）
+- Bulma（CSSフレームワーク）
+- Cordova（ネイティブアプリ化）
+- localStorage / SQLite（データ保存）
 
-## 技術スタック
+## 主な機能
+- 出退勤時間と休憩時間の登録
+- 今月の勤務時間・出勤日数の自動集計
+- 勤務履歴の一覧・編集・削除
+- （今後）Excelエクスポート対応予定
 
-- Angular CLI 15.2.7.
-- TypeScript
-- Cordova（Androidアプリのビルド用）
-
-## コードサンプル
-
-### **データのローカルストレージへの保存**
-
-```typescript
- // localStorageデータを設定する
-  set(key: string, value: any): boolean {
-    localStorage.setItem(`${STORAGE_KEY}-${key}`, JSON.stringify(value));
-    return JSON.stringify(this.get(key)) == JSON.stringify(value);
-  }
-
-  // localStorageデータを取得する
-  get(key: string, defaultValue: any = null) {
-    const value = localStorage.getItem(`${STORAGE_KEY}-${key}`);
-    return value ? JSON.parse(value) : defaultValue;
-
-  }
-```
-
-### SQLiteを使用したデータベーステーブルの作成
-
-```typescript
- //SQLiteデータベーステーブルを作成する
- createTable() {
-    this.sqlite.create({
-      name: 'data.db',
-      location: 'default'
-    })
-    .then((db: SQLiteObject) => {
-      db.executeSql('CREATE TABLE IF NOT EXISTS time_sheet(id INTEGER PRIMARY KEY AUTOINCREMENT, firstname TEXT, lastname TEXT)', [])
-        .then(() => console.log('Executed SQL'))
-        .catch(e => console.log(e));
-    })
-    .catch(e => console.log(e));
-  }
-```
+## 学んだこと
+- AngularによるSPA設計とフォーム操作
+- CordovaプラグインでのSQLite連携
+- オフライン対応のローカルデータ管理
 
 ## スクリーンショット
 
-![微信图片_20231123023158](https://github.com/cyyier/clockin/assets/52512369/1537b15b-2b74-4021-8497-094e872d808a)
-![微信图片_20231123023155](https://github.com/cyyier/clockin/assets/52512369/e381dbb3-70c9-4052-a97e-ea4e08ab12a3)
-![微信图片_20231123023150](https://github.com/cyyier/clockin/assets/52512369/7584379c-9f08-4a5a-b026-8902eded7814)
+### ホーム画面（出退勤登録）
+<img src="https://github.com/cyyier/clockin/assets/52512369/1537b15b-2b74-4021-8497-094e872d808a" width="200" alt="ホーム画面">
+
+出勤・退勤時刻と休憩時間を入力し、「登録」ボタンで保存できます。
+
+---
+
+### 今月の概要
+<img src="https://github.com/cyyier/clockin/assets/52512369/e381dbb3-70c9-4052-a97e-ea4e08ab12a3" width="200" alt="今月の勤務状況">
+
+今月の勤務時間と出勤日数の合計を自動で集計・表示します。
+
+---
+
+### 勤務履歴一覧
+<img src="https://github.com/cyyier/clockin/assets/52512369/7584379c-9f08-4a5a-b026-8902eded7814" width="200" alt="履歴一覧画面">
+
+過去の記録を日付順で表示し、「編集」「削除」も可能です。
+
 
