@@ -1,4 +1,4 @@
-# Clockin（勤務時間記録アプリ）
+# Clockin-app（勤務時間記録アプリ）
 
 Angular + Cordova を用いた、出退勤時間をローカルに記録・集計できる勤怠管理Androidアプリです。
 
