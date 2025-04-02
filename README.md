@@ -2,11 +2,10 @@
 
 Angular + Cordova を用いた、出退勤時間をローカルに記録・集計できる勤怠管理Androidアプリです。
 
-## 使用技術
-- Angular（v15）
-- Bulma（CSSフレームワーク）
-- Cordova（ネイティブアプリ化）
-- localStorage / SQLite（データ保存）
+## 技術スタック
+- フロントエンド：Angular 15（Bulma使用）
+- ネイティブ化：Cordova（Androidアプリ化）
+- データ保存：localStorage / SQLite
 
 ## 主な機能
 - 出退勤時間と休憩時間の登録
